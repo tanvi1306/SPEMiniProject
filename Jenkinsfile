@@ -19,10 +19,13 @@ pipeline {
             }
         }
 
-        stage('Test') {
-                steps {
+        stage('Test')
+        {
+            steps
+                {
                     sh 'mvn test'
                 }
+        }
 
         stage('Build Docker Image') {
             steps {
@@ -41,6 +44,15 @@ pipeline {
                     sh 'docker push tanvi1306/scientific_calculator'
                     }
                  }
+            }
+        }
+
+        stage('Remove current container')
+        {
+            steps{
+                script{
+                    sh 'docker rm -f scientific_calculator || true'
+                }
             }
         }
 
