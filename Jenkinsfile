@@ -14,7 +14,7 @@ pipeline {
                 script {
                     // Checkout the code from the GitHub repository
                     git branch: 'main', url: "${GITHUB_REPO_URL}"
-                    sh 'maven clean install'
+                    sh 'mvn clean install'
                 }
             }
         }
