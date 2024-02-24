@@ -6,7 +6,7 @@
   tasks:
     - name: Pull Docker Image
       docker_image:
-        name: "tanvi1306/ScientificCalculator"
+        name: "tanvi1306/scientific_calculator"
         source: pull
       register: docker_pull_result
 
@@ -19,4 +19,4 @@
         name: docker
         state: started
     - name: Running container
-      shell: docker run -it -d --name calculator tanvi1306/ScientificCalculator
+      shell: docker run -it -d --name calculator tanvi1306/scientific_calculator

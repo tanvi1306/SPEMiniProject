@@ -4,7 +4,7 @@ pipeline {
     maven 'Maven'
     }
     environment {
-        DOCKER_IMAGE_NAME = 'ScientificCalculator'
+        DOCKER_IMAGE_NAME = 'scientific_calculator'
         GITHUB_REPO_URL = 'https://github.com/tanvi1306/SPEMiniProject.git'
     }
 
@@ -32,7 +32,7 @@ pipeline {
             steps {
                 script{
                     docker.withRegistry('', 'DockerId') {
-                    sh 'docker push tanvi1306/ScientificCalculator'
+                    sh 'docker push tanvi1306/scientific_calculator'
                     }
                  }
             }
