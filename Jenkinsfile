@@ -1,7 +1,7 @@
 pipeline {
     agent any
     tools{
-    Maven 'maven_3_5_0'
+    maven 'Maven'
     }
     environment {
         DOCKER_IMAGE_NAME = 'ScientificCalculator'
@@ -14,7 +14,7 @@ pipeline {
                 script {
                     // Checkout the code from the GitHub repository
                     git branch: 'main', url: "${GITHUB_REPO_URL}"
-                    sh 'maven clean install'
+                    sh 'mvn clean install'
                 }
             }
         }
