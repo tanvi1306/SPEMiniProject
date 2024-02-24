@@ -10,6 +10,10 @@ public class ScientificCalculator
     }
     public int factorial(int num)
     {
+        if(num<0)
+        {
+            throw new IllegalArgumentException("Illegal Argument: Argument is negative");
+        }
         int ans = 1;
         for(int i=2;i<=num;i++)
         {
@@ -19,6 +23,13 @@ public class ScientificCalculator
     }
     public double logarithm(double num)
     {
+        if (num <0) {
+            throw new IllegalArgumentException("Illegal Argument: Argument is either negative or zero");
+        }
+        if(num==0)
+        {
+            return Double.NEGATIVE_INFINITY;
+        }
         return Math.log(num);
     }
     public double expo(double num,double a)

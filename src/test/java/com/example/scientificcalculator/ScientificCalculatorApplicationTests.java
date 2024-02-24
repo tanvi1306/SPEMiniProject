@@ -62,4 +62,5 @@ class ScientificCalculatorApplicationTests {
         assertEquals(1.0, calculator.expo(4, 0), 0.001);
     }
 
+
 }
