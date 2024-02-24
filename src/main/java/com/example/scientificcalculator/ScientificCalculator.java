@@ -24,11 +24,11 @@ public class ScientificCalculator
     public double logarithm(double num)
     {
         if (num <0) {
-            throw new IllegalArgumentException("Illegal Argument: Argument is either negative or zero");
+            throw new IllegalArgumentException("Illegal Argument: Argument is negative");
         }
         if(num==0)
         {
-            return Double.NEGATIVE_INFINITY;
+            throw new IllegalArgumentException("Illegal Argument: Argument is zero");
         }
         return Math.log(num);
     }

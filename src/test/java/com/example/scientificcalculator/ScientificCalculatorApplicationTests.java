@@ -18,8 +18,7 @@ class ScientificCalculatorApplicationTests {
     @Test
     public void testSquareRootForNegativeNumber() {
         ScientificCalculator calculator = new ScientificCalculator();
-        // Assuming that squareRoot function returns NaN for negative numbers
-        assertTrue(Double.isNaN(calculator.squareRoot(-4)));
+        assertThrows(IllegalArgumentException.class, () -> calculator.squareRoot(-4));
     }
 
     //factorial
@@ -32,15 +31,13 @@ class ScientificCalculatorApplicationTests {
     @Test
     public void testFactorialForNegativeNumber() {
         ScientificCalculator calculator = new ScientificCalculator();
-        // Assuming that factorial function throws an IllegalArgumentException for negative numbers
         assertThrows(IllegalArgumentException.class, () -> calculator.factorial(-4));
     }
 
     @Test
     public void testLogarithmForZero() {
         ScientificCalculator calculator = new ScientificCalculator();
-        // Assuming that logarithm function returns negative infinity for zero
-        assertEquals(Double.NEGATIVE_INFINITY, calculator.logarithm(0), 0.001);
+        assertThrows(IllegalArgumentException.class, () -> calculator.logarithm(0));
     }
 
     @Test
