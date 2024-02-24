@@ -6,6 +6,10 @@ public class ScientificCalculator
 {
     public double squareRoot(double num)
     {
+        if(num<0)
+        {
+            throw new IllegalArgumentException("Illegal Argument: Argument is negative");
+        }
         return Math.sqrt(num);
     }
     public int factorial(int num)
